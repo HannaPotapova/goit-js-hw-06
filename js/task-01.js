@@ -24,8 +24,8 @@ const navEl = document.querySelector('#categories');
 const elementAll = navEl.querySelectorAll('.item');
 console.log("Number of categories: ", elementAll.length);
 
-for (const element of elementAll) {
+elementAll.forEach (element => {
     const elementItem = element.getElementsByTagName('li');
     console.log("Category: ", element.firstElementChild.textContent);
     console.log('Elements: ', elementItem.length);
-}
+})
