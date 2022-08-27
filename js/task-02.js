@@ -31,9 +31,13 @@ const ingredients = [
 
 const list = document.querySelector("#ingredients");
 
-const elementItems = ingredients
-  .map((ingredient) => `<li class="item">${ingredient}</li>`)
-  .join("");
-console.log(elementItems);
-
-list.innerHTML = elementItems;
+const makeItems = ingredients => {
+  return ingredients.map(ingredient => {
+    const elementItem = document.createElement('li');
+    elementItem.textContent = ingredient;
+    elementItem.classList.add('item');
+    return elementItem;
+  });
+};
+const elements = makeItems(ingredients);
+list.append(...elements);

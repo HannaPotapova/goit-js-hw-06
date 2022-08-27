@@ -54,7 +54,7 @@ function onFormSubmit(event) {
     const formData = { email, password };
 
     if (email === "" || password === "") {
-        alert(message);
+        return alert(message);
     }
     
     console.log(formData);
